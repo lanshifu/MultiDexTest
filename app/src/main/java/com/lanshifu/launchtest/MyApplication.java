@@ -65,6 +65,14 @@ public class MyApplication extends Application {
         long startTime = System.currentTimeMillis();
         MultiDex.install(context);
         Log.d(TAG, "第二次 MultiDex.install 结束，耗时: " + (System.currentTimeMillis() - startTime));
+
+        preNewActivity();
+    }
+
+    private void preNewActivity() {
+        long startTime = System.currentTimeMillis();
+        MainActivity mainActivity = new MainActivity();
+        Log.d(TAG, "preNewActivity 耗时: " + (System.currentTimeMillis() - startTime));
     }
 
 
